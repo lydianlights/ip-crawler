@@ -1,0 +1,30 @@
+{
+  "name": "ip-crawler",
+  "scripts": {
+    "ts-node": "ts-node -r ./env/load-env",
+    "ts-node:test": "NODE_ENV=test npm run ts-node",
+    "start": "npm run ts-node index.ts",
+    "test-ip": "npm run ts-node:test test-ip.ts",
+    "migration:new": "node-pg-migrate create -j ts",
+    "migrate": "npm run ts-node node_modules/node-pg-migrate/bin/node-pg-migrate",
+    "migrate:testdb": "npm run ts-node:test node_modules/node-pg-migrate/bin/node-pg-migrate"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "dotenv": "^6.0.0",
+    "pg": "^7.4.3",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.9",
+    "@types/dotenv": "^4.0.3",
+    "@types/node-pg-migrate": "^2.3.1",
+    "@types/pg": "^7.4.10",
+    "@types/request": "^2.47.1",
+    "@types/request-promise-native": "^1.0.15",
+    "node-pg-migrate": "^3.9.0"
+  }
+}
